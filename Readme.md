@@ -1,14 +1,14 @@
 # Sistema de xadrez 
 
-## About
+## About this project
 
 ### Func
-1. asdasd
-2. 'asda
+1. 
+2. 
 3. 
 
 
 
 ### implementando novas funcionalidades
 
-- 16/01/2023 [link]www.google.com
+- 16/01/2023 [
