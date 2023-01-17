@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import chess.ChessPiece;
 import chess.ChessPosition;
+import chess.Color;
 
 public class UI {
 
@@ -69,9 +70,14 @@ public class UI {
 			System.out.print(ANSI_BLUE_BACKGROUND);
 		}
 		if (piece == null) {
-			System.out.print("-" + ANSI_RESET);
+			System.out.print("- " + ANSI_RESET);
 		} else {
-			System.out.print(piece);
+			if (piece.getColor() == Color.WHITE){
+				System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+
+			}else{
+				System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
+			}
 		}
 		System.out.print(" ");
 	}
