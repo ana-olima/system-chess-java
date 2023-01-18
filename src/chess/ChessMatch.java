@@ -14,6 +14,8 @@ public class ChessMatch {
 
 	public ChessMatch() {
 		board = new Board(8, 8);
+		turn = 1;
+		currentPlayer = Color.WHITE;
 		initialSetup();
 	}
 	public int getTurn(){
