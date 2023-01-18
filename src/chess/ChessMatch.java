@@ -8,13 +8,20 @@ import chess.pieces.Rook;
 
 public class ChessMatch {
 
+	private int turn;
+	private Color currentPlayer;
 	private Board board;
 
 	public ChessMatch() {
 		board = new Board(8, 8);
 		initialSetup();
 	}
-
+	public int getTurn(){
+		return turn;
+	}
+	public Color getCurrentPlayer(){
+		return currentPlayer;
+	}
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i = 0; i < board.getRows(); i++) {
