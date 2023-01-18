@@ -16,6 +16,8 @@ public class ChessMatch {
 	private Color currentPlayer;
 	private Board board;
 	private boolean check;
+	private boolean checkMate;
+
 	private List<Piece> piecesOnTheBoard = new ArrayList<>();
 	private List<Piece> capturedPieces = new ArrayList<>();
 	public ChessMatch() {
@@ -32,6 +34,9 @@ public class ChessMatch {
 	}
 	public boolean getCheck(){
 		return check;
+	}
+	public boolean getCheckMate(){
+		return checkMate;
 	}
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
