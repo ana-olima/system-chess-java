@@ -67,10 +67,14 @@ public class ChessMatch {
 		}
 		check = (testCheck(opponent(currentPlayer))) ? true : false;
 
-		nextTurn();
-		return (ChessPiece) capturedPiece;
-	}
+		if (testCheckMate(opponent(currentPlayer))){
+			checkMate = true;
+		}else{
+			nextTurn();
+		}
+		return(ChessPiece) capturedPiece;
 
+		}
 	private Piece makeMove(Position source, Position target) {
 		Piece p = board.removePiece(source);
 		Piece capturedPiece = board.removePiece(target);
