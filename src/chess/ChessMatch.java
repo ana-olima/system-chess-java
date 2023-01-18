@@ -8,6 +8,7 @@ import chess.pieces.Rook;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ChessMatch {
 
@@ -97,6 +98,15 @@ public class ChessMatch {
 	}
 	private Color opponent(Color color){
 		return (color == Color.WHITE) ? Color.BLACK: Color.WHITE;
+	}
+	private ChessPiece king(Color color){
+		List<Piece> list = piecesOnTheBoard.stream().filter(x->((ChessPiece)x).getColor() == color).collect(Collectors.toList());
+		for(Piece p: list){
+			if(p instanceof King){
+				return ((ChessPiece)p;
+			}
+		}
+		throw new IllegalStateException("There is no" + color + "king on the board");
 	}
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
