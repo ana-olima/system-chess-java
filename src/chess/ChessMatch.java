@@ -17,6 +17,7 @@ public class ChessMatch {
 	private Board board;
 	private boolean check;
 	private boolean checkMate;
+	private ChessPiece enPassantVulnerable;
 
 	private List<Piece> piecesOnTheBoard = new ArrayList<>();
 	private List<Piece> capturedPieces = new ArrayList<>();
@@ -43,7 +44,9 @@ public class ChessMatch {
 	public boolean getCheckMate() {
 		return checkMate;
 	}
-
+	public ChessPiece getEnPassantVulnerable(){
+	return enPassantVulnerable;
+	}
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i = 0; i < board.getRows(); i++) {
