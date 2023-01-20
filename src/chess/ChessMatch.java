@@ -75,6 +75,7 @@ public class ChessMatch {
 			undoMove(source, target, capturedPiece);
 			throw new ChessException("You can't put yourself in check");
 		}
+		ChessPiece movedPiece = (ChessPiece) board.piece(target);
 		check = (testCheck(opponent(currentPlayer))) ? true : false;
 
 		if (testCheckMate(opponent(currentPlayer))) {
@@ -82,7 +83,13 @@ public class ChessMatch {
 		} else {
 			nextTurn();
 		}
-		return (ChessPiece) capturedPiece;
+		if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() - 2 || targetPosition.getRow() == target.getRow() + 2){
+			enPassantVulnerable = movedPiece;
+		}
+		else{
+			enPassantVulnerable = null;
+		}
+			return (ChessPiece) capturedPiece;
 
 	}
 
