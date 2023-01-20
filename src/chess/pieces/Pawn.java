@@ -42,7 +42,7 @@ public class Pawn extends ChessPiece {
 
                 if(position.getRow() == 3){
                     Position left = new Position(position.getRow(), position.getColumn() - 1);
-                    if(getBoard().positionExists(left) && isThereAnOpponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVulnerable(){
+                    if(getBoard().positionExists(left) && isThereAnOpponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVulnerable()){
                         mat[left.getRow() - 1 ][left.getColumn()] = true;
                     }
                     Position right = new Position(position.getRow(), position.getColumn() + 1);
