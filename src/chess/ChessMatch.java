@@ -83,7 +83,7 @@ public class ChessMatch {
 		} else {
 			nextTurn();
 		}
-		if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() - 2 || targetPosition.getRow() == target.getRow() + 2){
+		if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() - 2 || targetPosition.getRow() == target.getRow() + 2)){
 			enPassantVulnerable = movedPiece;
 		}
 		else{
