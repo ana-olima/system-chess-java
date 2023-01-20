@@ -64,8 +64,16 @@ public class King extends ChessPiece{
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		if(getMoveCount() == 0 && !chessMatch.getCheck()){
-
+		Position posT1 = new Position(position.getRow(), position.getColumn() + 3);
+		if(testRookCastling(posT1)){
+			Position p1 = new Position(position.getRow(), position.getColumn() + 1);
+			Position p2 = new Position(position.getRow(), position.getColumn() + 2);
+			if (getBoard().piece(p1) == null && getBoard().piece(p2) == null){
+				mat[position.getRow()][position.getColumn() + 2] = true;
+			}
 		}
+	}
+
 		return mat;
 	}
 
