@@ -80,6 +80,14 @@ public class ChessMatch {
 			throw new ChessException("You can't put yourself in check");
 		}
 		ChessPiece movedPiece = (ChessPiece) board.piece(target);
+		promoted = null;
+		if(movedPiece instanceof Pawn){
+			if(movedPiece.getColor() == Color.WHITE && target.getRow() == 0 || movedPiece.getColor() == Color.BLACK && target.getRow() == 7)){
+				promoted = (ChessPiece)board.piece(target);
+}
+
+			}
+		}
 		check = (testCheck(opponent(currentPlayer))) ? true : false;
 
 		if (testCheckMate(opponent(currentPlayer))) {
